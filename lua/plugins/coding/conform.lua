@@ -4,6 +4,11 @@ return {
   event = "BufWritePre",
   cmd = "ConformInfo",
   dependencies = { "mason-org/mason.nvim" },
+  keys = {
+    { "cf", function() require("conform").format({ async = true }) end, desc = "Format" },
+    { "<leader>cf", function() require("conform").format({ async = true }) end, desc = "Format" },
+    { "<leader>lf", function() require("conform").format({ async = true }) end, desc = "Format" },
+  },
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },

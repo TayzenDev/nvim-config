@@ -13,6 +13,9 @@ return {
   "akinsho/bufferline.nvim",
   version = "*",
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/tokyonight.nvim" },
+  keys = {
+    { "<leader>b", "<cmd>BufferLinePick<CR>", desc = "Buffer switcher" },
+  },
   opts = {
     -- clear every bufferline background to keep the transparency
     highlights = function(config)

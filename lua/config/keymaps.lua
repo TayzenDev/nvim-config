@@ -1,4 +1,5 @@
-local wk = require("which-key")
+-- Core keymaps only, plugin keymaps live in their spec (`keys`)
+-- and which-key groups in plugins/ui/which-key.lua
 
 -- paste without overwriting
 vim.keymap.set("v", "p", "P")
@@ -7,62 +8,19 @@ vim.keymap.set("v", "p", "P")
 vim.keymap.set("n", "U", "<C-r>")
 
 -- movement
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up (centered)" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down (centered)" })
 vim.keymap.set("n", "W", "5w")
 vim.keymap.set("n", "B", "5b")
 
 -- clear search highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
--- Picker
-vim.keymap.set("n", "<C-p>", function() Snacks.picker.files() end, {})
+vim.keymap.set("n", "<leader>w", "<cmd>wall!<CR>", { desc = "Save all files" })
+vim.keymap.set("n", "<leader>Q", "<cmd>wqall!<CR>", { desc = "Save and Quit" })
 
--- Neo-tree
-vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<cr>", {})
-
--- Which-key labels and keymaps
-wk.add({
-  -- No groups
-  { "<leader>a", hidden = true },
-  { "<leader>w", "<cmd>wall!<CR>", desc = "Save all files" },
-  { "<leader>Q", "<cmd>wqall!<CR>", desc = "Save and Quit" },
-  { "<leader>b", "<cmd>BufferLinePick<CR>", desc = "Buffer switcher" },
-
-  -- Code
-  { "<leader>c", group = "+code" },
-  { "<leader>cf", "<cmd>lua require('conform').format({ async = true })<CR>", desc = "Format" },
-  { "<leader>cr", ":IncRename ", desc = "Rename" },
-  { "c", group = "+code" },
-  { "cf", "<cmd>lua require('conform').format({ async = true })<CR>", desc = "Format" },
-  { "cr", ":IncRename ", desc = "Rename" },
-
-  -- Find
-  { "<leader>f", group = "+find" },
-  { "<leader>ff", "<cmd>lua Snacks.picker.files()<CR>", desc = "Find Files" },
-  { "<leader>fg", "<cmd>lua Snacks.picker.grep()<CR>", desc = "Live Grep" },
-  { "<leader>fb", "<cmd>lua Snacks.picker.buffers()<CR>", desc = "Buffers" },
-  { "<leader>fh", "<cmd>lua Snacks.picker.help()<CR>", desc = "Help Tags" },
-
-  -- Goto (other LSP keymaps are Neovim defaults: K, gra, grr, gri, grn, grt, gO, see :help lsp-defaults)
-  { "<leader>g", group = "+goto" },
-  { "<leader>gb", "<cmd>lua Snacks.gitbrowse()<CR>", desc = "Open in browser", mode = { "n", "v" } },
-  { "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Definition" },
-  { "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
-  { "g", group = "+goto" },
-  { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Definition" },
-  { "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
-
-  -- LSP
-  { "<leader>l", group = "+lsp" },
-  { "<leader>lf", "<cmd>lua require('conform').format({ async = true })<CR>", desc = "Format" },
-  { "<leader>lr", ":IncRename ", desc = "Rename" },
-
-  -- Trouble
-  { "<leader>x", group = "+trouble" },
-  { "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", desc = "Toggle" },
-  { "<leader>xw", "<cmd>Trouble diagnostics toggle<CR>", desc = "Workspace Diagnostics" },
-  { "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", desc = "Document Diagnostics" },
-  { "<leader>xq", "<cmd>Trouble qflist toggle<CR>", desc = "Quickfix" },
-  { "<leader>xl", "<cmd>Trouble loclist toggle<CR>", desc = "Loclist" },
-})
+-- LSP (other LSP keymaps are Neovim defaults: K, gra, grr, gri, grn, grt, gO, see :help lsp-defaults)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Definition" })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Declaration" })
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Definition" })
+vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "Declaration" })

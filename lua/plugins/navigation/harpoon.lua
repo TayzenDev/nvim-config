@@ -20,6 +20,6 @@ return {
     end
 
     vim.keymap.set("n", "<C-e>", function() toggle_picker(harpoon:list()) end, { desc = "Open harpoon window" })
-    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add file to harpoon" })
   end,
 }

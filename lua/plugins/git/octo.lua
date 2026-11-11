@@ -8,6 +8,11 @@ return {
     "folke/snacks.nvim",
     "nvim-tree/nvim-web-devicons",
   },
+  keys = {
+    { "<leader>op", "<cmd>Octo pr list<cr>", desc = "List PRs" },
+    { "<leader>oi", "<cmd>Octo issue list<cr>", desc = "List issues" },
+    { "<leader>or", "<cmd>Octo review<cr>", desc = "Review PR" },
+  },
   opts = {
     picker = "snacks",
     -- bare Octo command opens picker of commands
