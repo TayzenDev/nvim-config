@@ -13,6 +13,9 @@ vim.opt.relativenumber = true
 -- sync system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- no swap files (files are often edited by other tools in parallel)
+vim.opt.swapfile = false
+
 vim.opt.background = "dark"
 
 -- which-key delay
