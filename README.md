@@ -31,7 +31,7 @@ lua/plugins/         one file per plugin, grouped by category
   navigation/        neo-tree, yazi, flash, harpoon, tmux, sessions
   lsp/               mason + native LSP, lazydev, inc-rename, venv-selector
   coding/            treesitter, blink.cmp, conform, mini.pairs, todo-comments
-  git/               gitsigns, fugitive
+  git/               gitsigns, fugitive, diffview, octo
 ```
 
 Per-server LSP overrides can be added in a top-level `lsp/<server>.lua` file (see `:help lsp-config`).
@@ -65,6 +65,8 @@ Per-server LSP overrides can be added in a top-level `lsp/<server>.lua` file (se
 - [`todo-comments.nvim`](https://github.com/folke/todo-comments.nvim): highlight TODO comments
 - [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim): git signs and blame
 - [`vim-fugitive`](https://github.com/tpope/vim-fugitive): git commands
+- [`diffview.nvim`](https://github.com/sindrets/diffview.nvim): side by side diffs, file history
+- [`octo.nvim`](https://github.com/pwntester/octo.nvim): GitHub PR reviews (`:Octo <PR url>`, then `:Octo review`)
 
 Built-in Neovim features replace a few former plugins: commenting (`gc`), LSP keymaps (`:help lsp-defaults`),
 diagnostics under the current line (`virtual_lines`).
