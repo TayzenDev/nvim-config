@@ -10,5 +10,10 @@ return {
     { "mason-org/mason.nvim", opts = {} },
     "neovim/nvim-lspconfig",
   },
-  opts = {},
+  opts = {
+    automatic_enable = {
+      -- stylua is installed as a formatter (conform), not as a language server
+      exclude = { "stylua" },
+    },
+  },
 }
