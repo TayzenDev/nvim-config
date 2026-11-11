@@ -12,6 +12,7 @@ return {
       { "g", group = "+goto" },
       { "<leader>l", group = "+lsp" },
       { "<leader>o", group = "+octo" },
+      { "<leader>s", group = "+search" },
       { "<leader>x", group = "+trouble" },
     },
   },

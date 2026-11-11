@@ -26,11 +26,11 @@ Language servers and formatters are installed with `:Mason`. Every installed ser
 init.lua
 lua/config/          options, keymaps, lazy.nvim bootstrap
 lua/plugins/         one file per plugin, grouped by category
-  snacks.lua         picker, notifier, indent guides, word highlighting, git browse
+  snacks.lua         picker, notifier, indent guides, word highlighting, git browse, zen
   ui/                colorscheme, statusline, bufferline, noice, which-key, ...
   navigation/        neo-tree, yazi, flash, harpoon, tmux, sessions
-  lsp/               mason + native LSP, lazydev, inc-rename, venv-selector
-  coding/            treesitter, blink.cmp, conform, mini.pairs, todo-comments
+  lsp/               mason + native LSP, lazydev, venv-selector
+  coding/            treesitter, blink.cmp, conform, grug-far, mini.pairs, todo-comments
   git/               gitsigns, fugitive, diffview, octo
 ```
 
@@ -39,7 +39,7 @@ Per-server LSP overrides can be added in a top-level `lsp/<server>.lua` file (se
 ## Plugins
 
 - [`lazy.nvim`](https://github.com/folke/lazy.nvim): plugin manager
-- [`snacks.nvim`](https://github.com/folke/snacks.nvim): picker, notifier, indent guides, word highlighting, git browse
+- [`snacks.nvim`](https://github.com/folke/snacks.nvim): picker, notifier, indent guides, word highlighting, git browse, zen mode
 - [`tokyonight.nvim`](https://github.com/folke/tokyonight.nvim): colorscheme (transparent)
 - [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim): status line
 - [`bufferline.nvim`](https://github.com/akinsho/bufferline.nvim): buffers as tabs
@@ -56,11 +56,11 @@ Per-server LSP overrides can be added in a top-level `lsp/<server>.lua` file (se
 - [`auto-session`](https://github.com/rmagatti/auto-session): automatic sessions
 - [`mason.nvim`](https://github.com/mason-org/mason.nvim) + [`mason-lspconfig.nvim`](https://github.com/mason-org/mason-lspconfig.nvim) + [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig): LSP servers
 - [`lazydev.nvim`](https://github.com/folke/lazydev.nvim): Neovim API for `lua_ls`
-- [`inc-rename.nvim`](https://github.com/smjonas/inc-rename.nvim): rename with preview
 - [`venv-selector.nvim`](https://github.com/linux-cultist/venv-selector.nvim): Python virtualenvs
 - [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) (`main` branch): parsers
 - [`blink.cmp`](https://github.com/saghen/blink.cmp): minimal autocompletion
 - [`conform.nvim`](https://github.com/stevearc/conform.nvim): format on save
+- [`grug-far.nvim`](https://github.com/MagicDuck/grug-far.nvim): search and replace in the project
 - [`mini.pairs`](https://github.com/nvim-mini/mini.pairs): autopairs
 - [`todo-comments.nvim`](https://github.com/folke/todo-comments.nvim): highlight TODO comments
 - [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim): git signs and blame

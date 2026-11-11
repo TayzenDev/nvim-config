@@ -9,6 +9,8 @@ return {
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fh", function() Snacks.picker.help() end, desc = "Help Tags" },
     { "<leader>gb", function() Snacks.gitbrowse() end, desc = "Open in browser", mode = { "n", "v" } },
+    { "<leader>z", function() Snacks.zen() end, desc = "Zen mode" },
+    { "<leader>Z", function() Snacks.zen.zoom() end, desc = "Zoom window" },
   },
   ---@type snacks.Config
   opts = {
@@ -23,5 +25,6 @@ return {
       animate = { enabled = false },
     },
     gitbrowse = { enabled = true },
+    zen = {},
   },
 }
